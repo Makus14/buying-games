@@ -42,18 +42,6 @@
   letter-spacing: 0;
 }
 
-.textInput {
-  width: 290px;
-  height: 45px;
-  color: white;
-  font-weight: 500;
-  font-size: 20px;
-  background: #161616;
-  border: 2px solid #454545;
-  border-radius: 5px;
-  text-align: center;
-}
-
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
