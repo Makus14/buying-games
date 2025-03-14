@@ -1,0 +1,23 @@
+.languageSwitcher {
+  display: inline-flex;
+  border-radius: 8px;
+  gap: 8px;
+}
+
+.langOption {
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-family: "SF Pro Display", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.langOption.active {
+  background-color: #3b0a47;
+  color: #a855f7;
+}
+
+.langOption:not(.active):hover {
+  color: #a855f7;
+}

@@ -8,7 +8,7 @@
 }
 
 .backgroundImage {
-  background-image: url("/mainBackground.png");
+  background-image: url("/pcBackground.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -56,6 +56,14 @@
   color: #7921d1;
 }
 
+.langAndTelegramContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 295px;
+  margin-top: 20px;
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -64,7 +72,7 @@
   }
 
   .backgroundImage {
-    background-image: url("/ggg.png");
+    background-image: url("/mobileBackground.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import TextInput from "../UI/TextInput/TextInput";
 import SubmitButton from "../UI/SubmitButton/SubmitButton";
 import Checkbox from "../UI/CheckBox/CheckBox";
+import LanguageSwitcher from "../UI/LanguageSwitcher/LanguageSwitcher";
+import TelegramIcon from "../UI/TelegramIcon/TelegramIcon";
 import classes from "./SearchGame.module.css";
 
 const SearchGame = () => {
@@ -54,6 +56,10 @@ const SearchGame = () => {
         >
           Связаться с продавцом
         </span>
+        <div className={classes.langAndTelegramContainer}>
+          <LanguageSwitcher />
+          <TelegramIcon />
+        </div>
       </div>
     </div>
   );
