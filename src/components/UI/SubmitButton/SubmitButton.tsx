@@ -1,32 +1,45 @@
-import React, { useState } from "react";
-
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import classes from "./SubmitButton.module.css";
 
-interface SubmitButton {
-  onClick: () => void;
+interface SubmitButtonProps {
+  onClick?: () => void;
   children: React.ReactNode;
   type?: "button" | "submit" | "reset";
   className?: string;
   disabled?: boolean;
+  isLoading?: boolean;
+  to?: string;
 }
 
-const SubmitButton: React.FC<SubmitButton> = ({
+const SubmitButton: React.FC<SubmitButtonProps> = ({
   onClick,
   children,
   type = "button",
   className = "",
   disabled = false,
+  isLoading = false,
+  to,
 }) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    if (disabled || isLoading) return;
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
+    if (onClick) {
       onClick();
-    }, 1000); // Симуляция задержки в 1 секунду
+    }
+
+    if (to && !disabled && !isLoading) {
+      setTimeout(() => {
+        navigate(to);
+      }, 1000);
+    }
   };
+
+  const buttonContent = isLoading ? (
+    <span className={classes.loader}></span>
+  ) : (
+    children
+  );
 
   return (
     <button
@@ -35,7 +48,7 @@ const SubmitButton: React.FC<SubmitButton> = ({
       type={type}
       disabled={disabled || isLoading}
     >
-      {isLoading ? <span className={classes.loader}></span> : children}
+      {buttonContent}
     </button>
   );
 };

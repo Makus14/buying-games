@@ -53,7 +53,7 @@
 .tooltip::after {
   content: "";
   position: absolute;
-  top: 101%;
+  top: 100%;
   left: 125px;
   transform: translateX(-50%);
   border-left: 10px solid transparent;
