@@ -42,6 +42,20 @@
   letter-spacing: 0;
 }
 
+.contactSellerText {
+  color: white;
+  cursor: pointer;
+  font-family: "SF Pro Display", sans-serif;
+  transition: transform 0.1s ease, color 0.1s ease;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.contactSellerText:active {
+  transform: scale(0.95);
+  color: #7921d1;
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;

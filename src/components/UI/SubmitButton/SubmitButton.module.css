@@ -13,7 +13,7 @@
   justify-content: center;
   background-color: #7921d1;
   color: white;
-  font-family: "SF Pro Display";
+  font-family: "SF Pro Display", sans-serif;
   width: 295px;
   height: 45px;
   font-weight: 500;
@@ -22,7 +22,8 @@
   border: none;
   outline: none;
   margin-top: 7px;
-  font-family: "SF Pro Display", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .button:hover {
@@ -31,8 +32,6 @@
 
 .button:active {
   transform: scale(0.95);
-  outline: none;
-  border: none;
 }
 
 .button:focus {
@@ -42,7 +41,25 @@
 }
 
 .button:disabled {
-  background-color: #ccc;
+  background-color: #7921d1;
   cursor: not-allowed;
   transform: none;
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
