@@ -1,6 +1,6 @@
 .gameContainer {
-  width: 50vw;
-  height: 70vh;
+  width: 53vw;
+  height: 73vh;
   background-color: #161616;
   border: 2px solid #454545;
   border-radius: 10px;
@@ -38,7 +38,7 @@
 
 .orderParams {
   display: flex;
-  width: 50px;
+  width: 70px;
   height: 27px;
   background-color: #2b1734;
   border: 2px solid #7921d1;
@@ -47,4 +47,14 @@
   justify-content: space-between;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .gameContainer {
+    border: none;
+  }
+
+  .gameImage {
+    display: none;
+  }
 }

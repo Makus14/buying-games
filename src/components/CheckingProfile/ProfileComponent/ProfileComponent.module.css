@@ -13,13 +13,14 @@
   font-weight: 500;
   font-size: 27px;
   color: white;
-  /* margin: 0; */
 }
 
 .imageContainer {
   border: 2px solid #a852ff;
   border-radius: 50%;
   overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .imageContainer img {

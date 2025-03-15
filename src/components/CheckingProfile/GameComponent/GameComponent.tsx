@@ -15,7 +15,7 @@ const GameComponent = () => {
           <p className={classes.orderText}>DLC</p>
           <InformationMark />
         </div>
-        <div className={classes.orderParams} style={{ width: "220px" }}>
+        <div className={classes.orderParams} style={{ width: "240px" }}>
           <p className={classes.orderText}>Время на активацию 00:00:00</p>
           <InformationMark />
         </div>

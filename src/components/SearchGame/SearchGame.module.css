@@ -40,6 +40,7 @@
   font-size: 25px;
   line-height: 130%;
   letter-spacing: 0;
+  margin-bottom: 15px;
 }
 
 .contactSellerText {
@@ -61,7 +62,7 @@
   justify-content: space-between;
   align-items: center;
   width: 295px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .errorMessage {
