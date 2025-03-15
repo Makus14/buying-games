@@ -13,42 +13,46 @@ const SearchGame = () => {
   const [inputValue, setInputValue] = useState("");
   const [isChecked, setIsChecked] = useState(false);
   const [inputError, setInputError] = useState(false);
+  const [showError, setShowError] = useState(false);
   const [checkboxError, setCheckboxError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
-    setInputError(false); // Сбрасываем ошибку при изменении ввода
+    setInputError(false);
   };
 
   const handleButtonClick = () => {
     setInputError(false);
     setCheckboxError(false);
 
-    // Проверка чекбокса
+    if (!inputValue) {
+      setInputError(true);
+      setShowError(true);
+      console.log("Введите код");
+      hideErrorMessage();
+      return;
+    }
+
+    if (inputValue !== uniqueCode) {
+      setInputError(true);
+      setShowError(true);
+      console.log("Неверный код");
+      hideErrorMessage();
+      return;
+    }
+
     if (!isChecked) {
       setCheckboxError(true);
       console.log("Ошибка с чекбоксом");
     }
 
-    // Проверка на пустое поле
-    if (!inputValue) {
-      setInputError(true);
-      console.log("Введите код");
-    }
-    // Проверка на неправильный код
-    else if (inputValue !== uniqueCode) {
-      setInputError(true);
-      console.log("Неверный код");
-    }
-
-    // Если все правильно, только тогда выполняем переход
     if (isChecked && inputValue === uniqueCode) {
       setIsLoading(true);
       setTimeout(() => {
         setIsLoading(false);
         console.log("Валидация успешна, выполняем переход...");
-        navigate(`/${inputValue}`); // Выполняем редирект вручную через navigate
+        navigate(`/${inputValue}`);
       }, 1000);
     }
   };
@@ -62,23 +66,34 @@ const SearchGame = () => {
     console.log("Связаться с продавцом");
   };
 
+  const hideErrorMessage = () => {
+    setTimeout(() => {
+      setShowError(false);
+    }, 3000);
+  };
+
   return (
     <div className={classes.container}>
       <div className={classes.backgroundImage}></div>
+      {(inputError || showError) && (
+        <div
+          className={`${classes.errorMessage} ${showError ? classes.show : ""}`}
+        >
+          Некорректный код заказа.
+          <br />
+          Проверьте код ещё раз.
+        </div>
+      )}
       <div className={classes.boxInfo}>
         <p className={classes.title}>Введите уникальный код заказа</p>
-
         <TextInput
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Введите уникальный код"
-          hasError={inputError} // Показываем ошибку при неверном коде
+          hasError={inputError}
         />
 
-        <SubmitButton
-          onClick={handleButtonClick} // Вызываем обработчик клика, который будет проверять код
-          isLoading={isLoading}
-        >
+        <SubmitButton onClick={handleButtonClick} isLoading={isLoading}>
           Подтвердить
         </SubmitButton>
 
