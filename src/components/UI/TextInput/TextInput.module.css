@@ -21,3 +21,9 @@
 .textInput.error {
   border-color: #721414;
 }
+
+@media (max-width: 768px) {
+  .textInput {
+    width: 90vw;
+  }
+}

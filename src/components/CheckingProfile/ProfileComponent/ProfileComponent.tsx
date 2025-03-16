@@ -4,7 +4,11 @@ import TelegramIcon from "../../UI/TelegramIcon/TelegramIcon";
 import steamAvatar from "../../../assets/steamAvatar.png";
 import classes from "./ProfileComponent.module.css";
 
-const ProfileComponent = () => {
+type ProfileComponentProps = {
+  isMobile: boolean;
+};
+
+const ProfileComponent = ({ isMobile }: ProfileComponentProps) => {
   const handleAcceptAccount = () => {
     console.log("Это мой аккаунт");
   };
@@ -15,10 +19,27 @@ const ProfileComponent = () => {
 
   return (
     <div className={classes.profileContainer}>
-      <p className={classes.checkingProfileText}>Проверка профиля</p>
-      <div className={classes.imageContainer}>
-        <img src={steamAvatar} alt="Steam avatar" />
-      </div>
+      {!isMobile && (
+        <>
+          <p className={classes.checkingProfileText}>Проверка профиля</p>
+          <div className="imageContainer">
+            <img src={steamAvatar} alt="Steam avatar" />
+          </div>
+        </>
+      )}
+      {isMobile && (
+        <>
+          <p className="gameNameText">
+            Command & Conquer™ Red Alert™ 3- Uprising
+          </p>
+          <p
+            className="orderText"
+            style={{ marginTop: "10px", marginBottom: "10px" }}
+          >
+            Заказ #999999999
+          </p>
+        </>
+      )}
       <p className={classes.checkingNicknameText}>
         Steam никнейм покупателя. Проверьте <br /> перед покупкой!
       </p>
@@ -42,6 +63,7 @@ const ProfileComponent = () => {
       >
         Сменить аккаунт
       </SubmitButton>
+
       <div className={classes.langAndTelegramContainer}>
         <LanguageSwitcher />
         <TelegramIcon />

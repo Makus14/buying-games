@@ -1,4 +1,7 @@
 .gameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 53vw;
   height: 73vh;
   background-color: #161616;
@@ -13,27 +16,19 @@
   object-fit: contain;
 }
 
-.gameNameText {
+/* .gameNameText {
   font-family: "SF Pro Display", sans-serif;
   font-weight: 500;
   font-size: 27px;
   color: white;
   margin: 0;
-}
+} */
 
 .orderContainer {
   display: flex;
   gap: 10px;
   padding-top: 10px;
   align-items: center;
-}
-
-.orderText {
-  font-family: "SF Pro Display", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  color: white;
-  margin: 0;
 }
 
 .orderParams {
@@ -51,7 +46,16 @@
 
 @media (max-width: 768px) {
   .gameContainer {
+    background-color: rgba(121, 33, 209, 0.1);
+    background-image: url("/mobileProfileBackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    width: 100vw;
     border: none;
+    align-items: center;
+    /* justify-content: space-between; */
   }
 
   .gameImage {

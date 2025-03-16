@@ -1,7 +1,7 @@
 .profileContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   height: 450px;
   width: 450px;
@@ -15,7 +15,7 @@
   color: white;
 }
 
-.imageContainer {
+/* .imageContainer {
   border: 2px solid #a852ff;
   border-radius: 50%;
   overflow: hidden;
@@ -27,7 +27,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
 
 .checkingNicknameText {
   font-family: "SF Pro Display", sans-serif;
@@ -67,4 +67,14 @@
   align-items: center;
   width: 295px;
   margin-top: 70px;
+}
+
+@media (max-width: 768px) {
+  .profileContainer {
+    width: auto;
+  }
+  .langAndTelegramContainer {
+    width: 90vw;
+    margin-top: 130px;
+  }
 }
