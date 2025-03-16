@@ -133,4 +133,8 @@ button:focus-visible {
   .gameNameText {
     text-align: center;
   }
+
+  .gameNameText {
+    color: #a852ff;
+  }
 }

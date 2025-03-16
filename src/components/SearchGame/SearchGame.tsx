@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import TextInput from "../UI/TextInput/TextInput";
 import SubmitButton from "../UI/SubmitButton/SubmitButton";
 import Checkbox from "../UI/CheckBox/CheckBox";
 import LanguageSwitcher from "../UI/LanguageSwitcher/LanguageSwitcher";
 import TelegramIcon from "../UI/TelegramIcon/TelegramIcon";
+import appLogo from "../../assets/appLogoWhite.svg";
 import { uniqueCode } from "../../config";
 import classes from "./SearchGame.module.css";
 
@@ -74,7 +76,11 @@ const SearchGame = () => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.backgroundImage}></div>
+      <div className={classes.backgroundImage}>
+        <div className={classes.boxLogo}>
+          <img src={appLogo} alt="App Logo" width={50} height={50} />
+        </div>
+      </div>
       {(inputError || showError) && (
         <div
           className={`${classes.errorMessage} ${showError ? classes.show : ""}`}

@@ -32,6 +32,13 @@
   align-items: center;
 }
 
+.boxLogo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .title {
   color: white;
   width: 290px;
@@ -125,5 +132,9 @@
   .langAndTelegramContainer {
     width: 90vw;
     margin-top: 100px;
+  }
+
+  .boxLogo {
+    left: 10%;
   }
 }
