@@ -100,7 +100,6 @@ button:focus-visible {
   overflow: hidden;
   margin-top: 20px;
   margin-bottom: 20px;
-  /* order: 2; */
 }
 
 .imageContainer img {

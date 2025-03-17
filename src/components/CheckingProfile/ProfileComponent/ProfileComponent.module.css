@@ -1,7 +1,6 @@
 .profileContainer {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   height: 450px;
   width: 450px;
@@ -14,20 +13,6 @@
   font-size: 27px;
   color: white;
 }
-
-/* .imageContainer {
-  border: 2px solid #a852ff;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.imageContainer img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
 
 .checkingNicknameText {
   font-family: "SF Pro Display", sans-serif;
